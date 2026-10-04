@@ -1,68 +1,1267 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Anokhi Paintings | Nerul, Navi Mumbai</title>
-<style>
-*{box-sizing:border-box}body{margin:0;background:#fffaf4;color:#28221e;font-family:Georgia,serif;line-height:1.6}
-nav{position:sticky;top:0;background:#fffaf4ee;border-bottom:1px solid #eadbc9;padding:16px 7%;display:flex;justify-content:space-between;z-index:5}
-nav a{color:#28221e;text-decoration:none;margin-left:20px}.logo{font-weight:bold;letter-spacing:2px}.logo b{color:#a85c40}
-.hero{padding:75px 8%;min-height:78vh;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;background:linear-gradient(135deg,#fffaf4,#f2dfc9)}
-.eyebrow{text-transform:uppercase;letter-spacing:3px;color:#a85c40;font:12px Arial}
-h1{font-size:clamp(48px,7vw,92px);line-height:.92;margin:15px 0}h2{font-size:42px;margin:10px 0}
-p{font-size:17px}.btn{display:inline-block;background:#a85c40;color:white;text-decoration:none;padding:13px 24px;border-radius:30px;font-family:Arial;font-weight:bold;margin-top:12px}
-.art{height:500px;border-radius:240px 240px 25px 25px;background:#dec3a4;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;box-shadow:18px 18px #cfae87}
-section{padding:80px 8%}.center{text-align:center;max-width:780px;margin:auto}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:35px}.card{background:#fff;border:1px solid #eadbc9;border-radius:20px;padding:28px}
-.card h3{font-size:25px}.tag{color:#a85c40;font:12px Arial;letter-spacing:2px;text-transform:uppercase}
-.alt{background:#f5e8d8}.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:35px}.tile{aspect-ratio:1;background:#ead9c5;border-radius:16px;display:flex;align-items:center;justify-content:center;color:#795d49;text-align:center}
-.quote{font-size:30px;font-style:italic;border-left:4px solid #c99b59;padding-left:25px}
-footer{background:#29231f;color:white;padding:45px 8%;display:flex;justify-content:space-between}
-@media(max-width:800px){nav{flex-wrap:wrap;gap:10px}nav div:last-child{width:100%;display:flex;justify-content:space-between}nav a{margin:0}.hero,.split{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}.art{height:360px}section{padding:60px 6%}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anokhi Paintings · Nerul, Navi Mumbai</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ---------- RESET & GLOBAL ---------- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #fcf7f0;
+      color: #2b2420;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .logo, .quote {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    a { text-decoration: none; color: inherit; transition: all 0.2s ease; }
+
+    /* ---------- COLOR VARIABLES ---------- */
+    :root {
+      --clay: #b45f3e;
+      --clay-light: #d18a6b;
+      --sand: #f2dfc9;
+      --cream: #fcf7f0;
+      --dark: #29231f;
+      --border: #e6d5c4;
+      --shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.08);
+      --radius-card: 28px;
+      --radius-pill: 50px;
+      --sage: #7f8c6e;
+      --sage-light: #e3e8dc;
+    }
+
+    /* ---------- STICKY NAV ---------- */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(252, 247, 240, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      z-index: 100;
+      transition: box-shadow 0.3s;
+    }
+
+    nav.scrolled { box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04); }
+
+    .logo {
+      font-size: 1.5rem;
+      letter-spacing: 4px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .logo b { color: var(--clay); font-weight: 700; }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .nav-links a { position: relative; padding: 0.3rem 0; }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--clay);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:hover { color: var(--clay); }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      color: var(--clay);
+      cursor: pointer;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      padding: 4rem 8% 5rem;
+      min-height: 90vh;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+      background: linear-gradient(145deg, #fcf7f0 0%, #f3e9df 70%, #e8dfd4 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%; right: -10%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(127, 140, 110, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--clay);
+      font: 600 0.75rem 'Inter', sans-serif;
+      margin-bottom: 0.8rem;
+      display: inline-block;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.5rem, 8vw, 6.5rem);
+      line-height: 1.02;
+      color: var(--dark);
+      margin: 0.5rem 0 1.2rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 500px;
+      color: #4a403a;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--clay);
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: var(--radius-pill);
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 10px 20px -8px rgba(180, 95, 62, 0.4);
+      margin-top: 0.5rem;
+    }
+
+    .btn:hover {
+      background: #9e4f33;
+      transform: translateY(-2px);
+      box-shadow: 0 18px 25px -8px rgba(180, 95, 62, 0.5);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--clay);
+      color: var(--clay);
+      box-shadow: none;
+    }
+
+    .btn-outline:hover { background: var(--clay); color: white; }
+
+    .art-hero {
+      height: 520px;
+      border-radius: 300px 300px 40px 40px;
+      background: linear-gradient(145deg, #e6d5c4, #d4bca6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2.5rem;
+      box-shadow: 24px 24px 0 #c9a88b, 0 25px 40px -10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .art-hero:hover { transform: scale(1.01); }
+
+    .art-hero i {
+      font-size: 5rem;
+      color: var(--clay);
+      opacity: 0.75;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .art-hero b {
+      font-size: 1.4rem;
+      font-family: 'Playfair Display', serif;
+      color: #4a2e22;
+      line-height: 1.4;
+      max-width: 320px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .art-hero small {
+      display: block;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #6b4d3a;
+      font-style: italic;
+    }
+
+    /* ---------- SECTIONS & CARDS ---------- */
+    section { padding: 6rem 8%; position: relative; }
+
+    .section-header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 3rem;
+    }
+
+    .section-header h2 {
+      font-size: 3rem;
+      margin: 0.5rem 0 1rem;
+      color: var(--dark);
+    }
+
+    .section-header p { font-size: 1.2rem; color: #5b4d44; }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: var(--radius-card);
+      padding: 2.5rem 1.8rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: all 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 6px;
+      background: var(--clay);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #dbb594;
+      box-shadow: 0 30px 40px -15px rgba(0, 0, 0, 0.15);
+    }
+
+    .card:hover::before { opacity: 1; }
+
+    .card .tag {
+      font: 600 0.7rem 'Inter', sans-serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--clay);
+      background: #f9ede3;
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      display: inline-block;
+      width: fit-content;
+      margin-bottom: 1.2rem;
+    }
+
+    .card h3 { font-size: 1.9rem; margin-bottom: 0.8rem; color: var(--dark); }
+
+    .card p { color: #5b4d44; font-size: 1rem; margin-bottom: 1.5rem; flex-grow: 1; }
+
+    .card .card-icon {
+      font-size: 2.2rem;
+      color: var(--clay);
+      opacity: 0.7;
+      margin-top: 0.5rem;
+      align-self: flex-end;
+    }
+
+    /* ---------- ALT BACKGROUND SECTIONS ---------- */
+    .alt-bg { background: #f3f1ec; }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .quote-block {
+      font-size: 2rem;
+      font-style: italic;
+      border-left: 6px solid var(--sage);
+      padding-left: 2rem;
+      color: #2f2621;
+      font-family: 'Playfair Display', serif;
+      line-height: 1.3;
+    }
+
+    .quote-block small {
+      display: block;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+      font-style: normal;
+      margin-top: 1rem;
+      color: var(--clay);
+      letter-spacing: 1px;
+    }
+
+    .info-block p { font-size: 1.15rem; margin-bottom: 1.2rem; color: #4d3e35; }
+
+    /* ---------- GALLERY ---------- */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      margin-top: 3rem;
+    }
+
+    .gallery-item {
+      aspect-ratio: 1 / 1;
+      background: #e8dfd4;
+      border-radius: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #6b5442;
+      text-align: center;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 18px -6px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+      border: 2px solid transparent;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .gallery-item.photo {
+      padding: 0;
+      background: #2b2420;
+      border: 2px solid #d4bca6;
+    }
+
+    .gallery-item.photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item.photo:hover img { transform: scale(1.06); }
+
+    .gallery-item.photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(43, 36, 32, 0.5) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .gallery-item.photo:hover::after { opacity: 1; }
+
+    .gallery-item.photo .caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1rem 0.8rem 0.8rem;
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-align: center;
+      z-index: 2;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    .gallery-item.photo:hover .caption { opacity: 1; transform: translateY(0); }
+
+    .gallery-item.photo .zoom-hint {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%) scale(0.6);
+      color: white;
+      font-size: 2rem;
+      opacity: 0;
+      z-index: 2;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      pointer-events: none;
+    }
+
+    .gallery-item.photo:hover .zoom-hint {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .gallery-item i {
+      font-size: 2.8rem;
+      margin-bottom: 0.8rem;
+      color: var(--clay);
+      opacity: 0.8;
+    }
+
+    .gallery-item span { font-size: 0.9rem; font-weight: 600; letter-spacing: 0.5px; }
+
+    .gallery-item:hover {
+      transform: scale(1.02);
+      border-color: var(--clay);
+      box-shadow: 0 20px 30px -10px rgba(180, 95, 62, 0.25);
+      background: #f2e6da;
+    }
+
+    .gallery-item.photo:hover {
+      background: #2b2420;
+      transform: scale(1.02);
+      border-color: var(--clay);
+      box-shadow: 0 20px 30px -10px rgba(180, 95, 62, 0.35);
+    }
+
+    /* ---------- LIGHTBOX ---------- */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 15, 12, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+      overflow: hidden;
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* ---- PAN STAGE ----
+       This is the key element: a full-screen stage that becomes
+       scrollable / pannable when the image is zoomed in.
+    ---- */
+    .lightbox-stage {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      display: block;
+      cursor: default;
+      -webkit-overflow-scrolling: touch;
+      touch-action: none; /* We handle gestures manually */
+    }
+
+    .lightbox-stage.zoomed {
+      overflow: auto;
+      cursor: grab;
+    }
+
+    .lightbox-stage.zoomed.grabbing {
+      cursor: grabbing;
+    }
+
+    .lightbox-img {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      transform-origin: center center;
+      max-width: none;
+      max-height: none;
+      border-radius: 12px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+      user-select: none;
+      -webkit-user-drag: none;
+      will-change: transform;
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+      pointer-events: auto;
+    }
+
+    /* When not zoomed, image is centered and fits viewport */
+    .lightbox-img.fit {
+      width: auto;
+      height: auto;
+      max-width: 88vw;
+      max-height: 82vh;
+    }
+
+    /* ---- Zoom controls panel ---- */
+    .zoom-controls {
+      position: absolute;
+      bottom: 5.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(30, 22, 18, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 50px;
+      padding: 0.5rem 0.7rem;
+      z-index: 20;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .zoom-controls button {
+      background: transparent;
+      border: none;
+      color: #f4e6d8;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .zoom-controls button:hover {
+      background: rgba(255, 255, 255, 0.14);
+      transform: scale(1.08);
+    }
+
+    .zoom-controls button:active { transform: scale(0.96); }
+
+    .zoom-controls button:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .zoom-level {
+      color: #f4e6d8;
+      font: 500 0.85rem 'Inter', sans-serif;
+      min-width: 52px;
+      text-align: center;
+      letter-spacing: 0.5px;
+      user-select: none;
+    }
+
+    .zoom-divider {
+      width: 1px;
+      height: 22px;
+      background: rgba(255, 255, 255, 0.18);
+      margin: 0 0.2rem;
+    }
+
+    /* ---- Close button ---- */
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.8rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      font-size: 1.3rem;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.25s, transform 0.25s;
+      z-index: 30;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.22);
+      transform: rotate(90deg);
+    }
+
+    /* ---- Caption ---- */
+    .lightbox-caption {
+      position: absolute;
+      top: 1.8rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #f4e6d8;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      text-align: center;
+      opacity: 0.85;
+      pointer-events: none;
+      z-index: 20;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 70vw;
+    }
+
+    /* ---- Hint text ---- */
+    .lightbox-hint {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(244, 230, 216, 0.55);
+      font: 400 0.75rem 'Inter', sans-serif;
+      letter-spacing: 1px;
+      text-align: center;
+      z-index: 20;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    /* Show a "Drag to pan" hint when zoomed */
+    .lightbox-hint.pan-hint {
+      color: rgba(244, 230, 216, 0.9);
+    }
+
+    body.lightbox-open { overflow: hidden; }
+
+    /* ---------- CONTACT & FOOTER ---------- */
+    .contact-section {
+      background: #fcf7f0;
+      text-align: center;
+      padding: 6rem 8% 5rem;
+    }
+
+    .contact-section h2 { font-size: 3.2rem; margin: 1rem 0; }
+
+    .contact-section .btn {
+      margin: 1.5rem 0 1rem;
+      font-size: 1.1rem;
+      padding: 1.1rem 3rem;
+    }
+
+    .whatsapp-note {
+      font: 0.9rem 'Inter', sans-serif;
+      color: #8a7a6e;
+      margin-top: 1rem;
+    }
+
+    footer {
+      background: #2b2420;
+      color: #e7ddd6;
+      padding: 3rem 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    footer .footer-logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: white;
+      font-family: 'Playfair Display', serif;
+    }
+
+    footer .footer-logo b { color: #d18a6b; }
+
+    footer .footer-social i {
+      font-size: 1.4rem;
+      margin-left: 1.2rem;
+      color: #b8a69a;
+      transition: color 0.2s;
+    }
+
+    footer .footer-social i:hover { color: #d18a6b; }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 3rem 6% 4rem;
+        gap: 3rem;
+      }
+      .art-hero { height: 420px; box-shadow: 16px 16px 0 #c9a88b; }
+      .cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 800px) {
+      nav { padding: 1rem 5%; }
+      .menu-toggle { display: block; }
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.5rem 0 0.5rem;
+        border-top: 1px solid var(--border);
+        margin-top: 0.8rem;
+      }
+      .nav-links.active { display: flex; }
+      .split { grid-template-columns: 1fr; gap: 2rem; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      section { padding: 4rem 5%; }
+      .section-header h2 { font-size: 2.4rem; }
+      .hero h1 { font-size: 3.8rem; }
+      .quote-block { font-size: 1.6rem; padding-left: 1.5rem; }
+      footer { flex-direction: column; text-align: center; }
+      footer .footer-social i { margin: 0 0.8rem; }
+      .zoom-controls { bottom: 4rem; }
+      .lightbox-hint { font-size: 0.65rem; bottom: 1rem; }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .art-hero { height: 320px; padding: 1.5rem; }
+      .hero h1 { font-size: 3rem; }
+      .btn { padding: 0.9rem 1.8rem; width: 100%; text-align: center; }
+      .zoom-controls { gap: 0.3rem; padding: 0.4rem 0.5rem; }
+      .zoom-controls button { width: 34px; height: 34px; font-size: 0.9rem; }
+      .zoom-level { font-size: 0.75rem; min-width: 42px; }
+      .lightbox-caption { font-size: 0.85rem; }
+    }
+
+    /* ---------- ANIMATIONS ---------- */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up { animation: fadeUp 0.8s cubic-bezier(0.2, 0.9, 0.3, 1) forwards; }
+    .delay-1 { animation-delay: 0.15s; }
+    .delay-2 { animation-delay: 0.3s; }
+  </style>
 </head>
 <body>
-<nav><div class="logo">ANOKHI <b>PAINTINGS</b></div><div>
-<a href="#kids">Kids</a><a href="#adults">Adults</a><a href="#gallery">Gallery</a><a href="#about">About</a><a href="#contact">Contact</a>
-</div></nav>
 
-<header class="hero">
-<div><div class="eyebrow">Art · Creativity · Expression</div>
-<h1>Create.<br>Explore.<br>Express.</h1>
-<p>Kids art classes and guided painting classes for adults in <b>Nerul, Navi Mumbai</b>.</p>
-<a class="btn" href="#contact">Enquire About Classes</a></div>
-<div class="art"><b>Your favourite Anokhi Paintings artwork will appear here.</b><br><br>Add your artwork photo to make this the hero image.</div>
-</header>
+  <!-- ========== NAVIGATION ========== -->
+  <nav id="mainNav">
+    <div class="logo">ANOKHI <b>PAINTINGS</b></div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#kids">Kids</a>
+      <a href="#seniors">Seniors</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-<section id="kids"><div class="center"><div class="eyebrow">Young artists</div><h2>Kids Art Classes</h2><p>A structured art journey that develops drawing, observation, colour, painting and creative expression.</p></div>
-<div class="cards">
-<div class="card"><div class="tag">Ages 5–7 · 60 min</div><h3>Little Artists</h3><p>Shapes, lines, colours, patterns, nature, stories and playful painting.</p></div>
-<div class="card"><div class="tag">Ages 8–11 · 75 min</div><h3>Young Artists</h3><p>Observation, shading, composition, perspective, acrylic painting and creative projects.</p></div>
-<div class="card"><div class="tag">Ages 12–15 · 90 min</div><h3>Creative Artists</h3><p>Realistic drawing, portraiture, perspective, acrylics, mixed media and independent projects.</p></div>
-</div></section>
+  <!-- ========== HERO ========== -->
+  <header class="hero">
+    <div class="fade-up">
+      <div class="eyebrow">Art · Creativity · Expression</div>
+      <h1>Create.<br>Explore.<br>Express.</h1>
+      <p>Kids art classes and guided painting classes for seniors in <b>Nerul, Navi Mumbai</b>.</p>
+      <a class="btn" href="#contact">Enquire About Classes</a>
+      <a class="btn btn-outline" href="#gallery" style="margin-left:0.8rem;">View Gallery</a>
+    </div>
+    <div class="art-hero fade-up delay-1">
+      <div>
+        <i class="fas fa-paintbrush"></i>
+        <b>Your favourite Anokhi Paintings artwork will appear here.</b>
+        <small>Add your artwork photo to make this the hero image.</small>
+      </div>
+    </div>
+  </header>
 
-<section id="adults" class="alt"><div class="split"><div><div class="eyebrow">For adults</div><h2>Painting Classes</h2>
-<p>Choose from our available paintings and learn to recreate the selected artwork step-by-step with guidance.</p>
-<p>A relaxed, creative experience for adults who want to spend time painting and create a finished artwork.</p>
-<a class="btn" href="#contact">Ask About Adult Classes</a></div>
-<div class="quote">“Bring your curiosity. We'll create the painting together.”</div></div></section>
+  <!-- ========== KIDS ========== -->
+  <section id="kids">
+    <div class="section-header fade-up">
+      <div class="eyebrow">Young artists</div>
+      <h2>Kids Art Classes</h2>
+      <p>A structured art journey that develops drawing, observation, colour, painting and creative expression.</p>
+    </div>
+    <div class="cards-grid">
+      <div class="card fade-up">
+        <div class="tag">Ages 5–7 · 60 min</div>
+        <h3>Little Artists</h3>
+        <p>Shapes, lines, colours, patterns, nature, stories and playful painting.</p>
+        <div class="card-icon"><i class="fas fa-child"></i></div>
+      </div>
+      <div class="card fade-up delay-1">
+        <div class="tag">Ages 8–11 · 75 min</div>
+        <h3>Young Artists</h3>
+        <p>Observation, shading, composition, perspective, acrylic painting and creative projects.</p>
+        <div class="card-icon"><i class="fas fa-pencil-ruler"></i></div>
+      </div>
+      <div class="card fade-up delay-2">
+        <div class="tag">Ages 12–15 · 90 min</div>
+        <h3>Creative Artists</h3>
+        <p>Realistic drawing, portraiture, perspective, acrylics, mixed media and independent projects.</p>
+        <div class="card-icon"><i class="fas fa-palette"></i></div>
+      </div>
+    </div>
+  </section>
 
-<section id="gallery"><div class="center"><div class="eyebrow">Anokhi Paintings</div><h2>Gallery</h2><p>Your paintings and student artworks can become the visual heart of the website.</p></div>
-<div class="gallery">
-<div class="tile">Artwork 1<br>Replace with your photo</div><div class="tile">Artwork 2</div><div class="tile">Artwork 3</div><div class="tile">Artwork 4</div>
-<div class="tile">Artwork 5</div><div class="tile">Artwork 6</div><div class="tile">Artwork 7</div><div class="tile">Artwork 8</div>
-</div></section>
+  <!-- ========== SENIORS ========== -->
+  <section id="seniors" class="alt-bg">
+    <div class="split">
+      <div class="info-block fade-up">
+        <div class="eyebrow">For seniors</div>
+        <h2 style="font-size:3rem; margin:0.5rem 0 1.5rem;">Painting Classes</h2>
+        <p>Choose from our available paintings and learn to recreate the selected artwork step-by-step with guidance.</p>
+        <p>A relaxed, creative experience for seniors who want to spend time painting and create a finished artwork.</p>
+        <a class="btn" href="#contact" style="margin-top:1rem;">Ask About Senior Classes</a>
+      </div>
+      <div class="quote-block fade-up delay-1">
+        “Bring your curiosity. We'll create the painting together.”
+        <small>— Anokhi</small>
+      </div>
+    </div>
+  </section>
 
-<section id="about" class="alt"><div class="split"><div><div class="eyebrow">About Anokhi</div><h2>Art that grows with you.</h2>
-<p>Anokhi Paintings brings together a love of painting and a structured approach to learning. Children learn techniques while developing their own ideas, while adults can enjoy the focused process of recreating beautiful paintings.</p></div>
-<div class="quote">Learn the technique.<br>Practise the skill.<br>Create your artwork.</div></div></section>
+  <!-- ========== GALLERY ========== -->
+  <section id="gallery">
+    <div class="section-header fade-up">
+      <div class="eyebrow">Anokhi Paintings</div>
+      <h2>Gallery</h2>
+      <p>Your paintings and student artworks can become the visual heart of the website.</p>
+    </div>
+    <div class="gallery-grid">
 
-<section id="contact"><div class="center"><div class="eyebrow">Nerul · Navi Mumbai</div><h2>Let's create something beautiful.</h2>
-<p>Contact Anokhi Paintings for batch timings, fees and admissions.</p>
-<a class="btn" href="mailto:ADD-YOUR-EMAIL-HERE">Contact Anokhi Paintings</a>
-<p style="font:13px Arial;color:#777">WhatsApp number will be added here later.</p></div></section>
+      <!-- ✅ YOUR REAL PAINTING PHOTO -->
+      <div class="gallery-item photo fade-up" data-lightbox="anokhi-1.jpg" data-caption="Anokhi Paintings · Original Artwork">
+        <img src="anokhi-1.jpg" 
+             alt="Anokhi Paintings – Traditional Indian Artwork" 
+             loading="lazy">
+        <div class="zoom-hint"><i class="fas fa-magnifying-glass-plus"></i></div>
+        <div class="caption">Anokhi Paintings · Original Artwork</div>
+      </div>
 
-<footer><div><b>ANOKHI PAINTINGS</b><br><small>Art · Creativity · Expression</small></div><div>Nerul, Navi Mumbai</div></footer>
-</body></html>
+      <!-- Other gallery items -->
+      <div class="gallery-item fade-up delay-1"><i class="fas fa-paint-brush"></i><span>Artwork 2</span></div>
+      <div class="gallery-item fade-up delay-2"><i class="fas fa-watercolor"></i><span>Artwork 3</span></div>
+      <div class="gallery-item fade-up delay-1"><i class="fas fa-palette"></i><span>Artwork 4</span></div>
+      <div class="gallery-item fade-up delay-2"><i class="fas fa-crayon"></i><span>Artwork 5</span></div>
+      <div class="gallery-item fade-up"><i class="fas fa-marker"></i><span>Artwork 6</span></div>
+      <div class="gallery-item fade-up delay-1"><i class="fas fa-pen-fancy"></i><span>Artwork 7</span></div>
+      <div class="gallery-item fade-up delay-2"><i class="fas fa-vector-square"></i><span>Artwork 8</span></div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="alt-bg">
+    <div class="split">
+      <div class="info-block fade-up">
+        <div class="eyebrow">About Anokhi</div>
+        <h2 style="font-size:3rem; margin:0.5rem 0 1.5rem;">Art that grows with you.</h2>
+        <p>Anokhi Paintings brings together a love of painting and a structured approach to learning. Children learn techniques while developing their own ideas, while seniors can enjoy the focused process of recreating beautiful paintings.</p>
+      </div>
+      <div class="quote-block fade-up delay-1">
+        Learn the technique.<br>Practise the skill.<br>Create your artwork.
+        <small>— The Anokhi way</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" class="contact-section">
+    <div class="fade-up">
+      <div class="eyebrow">Nerul · Navi Mumbai</div>
+      <h2>Let's create something beautiful.</h2>
+      <p style="font-size:1.2rem; max-width:600px; margin:0 auto 0.5rem;">Contact Anokhi Paintings for batch timings, fees and admissions.</p>
+      <a class="btn" href="mailto:ADD-YOUR-EMAIL-HERE"><i class="fas fa-envelope" style="margin-right:0.6rem;"></i>Contact Anokhi Paintings</a>
+      <p class="whatsapp-note"><i class="fab fa-whatsapp"></i> WhatsApp number will be added here later.</p>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-logo">ANOKHI <b>PAINTINGS</b></div>
+    <div>Art · Creativity · Expression</div>
+    <div>Nerul, Navi Mumbai</div>
+    <div class="footer-social">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-whatsapp"></i>
+    </div>
+  </footer>
+
+  <!-- ========== LIGHTBOX WITH ZOOM + PAN ========== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Enlarged artwork view">
+
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <!-- The pan stage: full-screen canvas the image sits on -->
+    <div class="lightbox-stage" id="lightboxStage">
+      <img class="lightbox-img fit" id="lightboxImg" src="" alt="Enlarged artwork" draggable="false">
+    </div>
+
+    <!-- Zoom controls -->
+    <div class="zoom-controls" id="zoomControls">
+      <button id="zoomOut" aria-label="Zoom out" title="Zoom out (−)">
+        <i class="fas fa-magnifying-glass-minus"></i>
+      </button>
+      <span class="zoom-level" id="zoomLevel">100%</span>
+      <button id="zoomIn" aria-label="Zoom in" title="Zoom in (+)">
+        <i class="fas fa-magnifying-glass-plus"></i>
+      </button>
+      <span class="zoom-divider"></span>
+      <button id="zoomReset" aria-label="Reset zoom" title="Reset (0)">
+        <i class="fas fa-rotate-left"></i>
+      </button>
+    </div>
+
+    <div class="lightbox-hint" id="lightboxHint">Scroll or pinch to zoom · Double-click to zoom · Esc to close</div>
+  </div>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+    (function() {
+      // ---------- NAV ----------
+      const nav = document.getElementById('mainNav');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 30) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+      });
+
+      const toggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+      toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        const icon = toggle.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          const icon = toggle.querySelector('i');
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        });
+      });
+
+      // ============================================================
+      //  LIGHTBOX WITH ZOOM + PAN  (Fully working drag-to-pan)
+      // ============================================================
+      const lightbox        = document.getElementById('lightbox');
+      const lightboxImg     = document.getElementById('lightboxImg');
+      const lightboxCaption = document.getElementById('lightboxCaption');
+      const lightboxClose   = document.getElementById('lightboxClose');
+      const lightboxStage   = document.getElementById('lightboxStage');
+      const lightboxHint    = document.getElementById('lightboxHint');
+      const zoomInBtn       = document.getElementById('zoomIn');
+      const zoomOutBtn      = document.getElementById('zoomOut');
+      const zoomResetBtn    = document.getElementById('zoomReset');
+      const zoomLevelEl     = document.getElementById('zoomLevel');
+
+      const MIN_ZOOM = 1;
+      const MAX_ZOOM = 4;
+      const ZOOM_STEP = 0.25;
+
+      let currentZoom = 1;
+
+      // Pan offsets: represent how far image is dragged from its centered position
+      let offsetX = 0;
+      let offsetY = 0;
+
+      // Drag state
+      let isDragging = false;
+      let dragStartX = 0;
+      let dragStartY = 0;
+      let dragStartOffsetX = 0;
+      let dragStartOffsetY = 0;
+
+      // ---- Open ----
+      function openLightbox(src, caption) {
+        lightboxImg.src = src;
+        lightboxCaption.textContent = caption || '';
+        currentZoom = 1;
+        offsetX = 0;
+        offsetY = 0;
+        lightboxStage.scrollTop = 0;
+        lightboxStage.scrollLeft = 0;
+        updateImage();
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('lightbox-open');
+      }
+
+      // ---- Close ----
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('lightbox-open');
+        currentZoom = 1;
+        offsetX = 0;
+        offsetY = 0;
+        setTimeout(() => {
+          if (!lightbox.classList.contains('active')) {
+            lightboxImg.src = '';
+            lightboxCaption.textContent = '';
+          }
+        }, 350);
+      }
+
+      // ---- Update image transform + stage state ----
+      function updateImage() {
+        // Apply transform: translate(-50%, -50%) centers image, then we add pan offsets via translate
+        lightboxImg.style.transform =
+          `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px)) scale(${currentZoom})`;
+
+        // Update zoom level text
+        zoomLevelEl.textContent = Math.round(currentZoom * 100) + '%';
+
+        // Button states
+        zoomInBtn.disabled  = currentZoom >= MAX_ZOOM;
+        zoomOutBtn.disabled = currentZoom <= MIN_ZOOM;
+
+        // Toggle stage zoomed class (enables pan cursor)
+        if (currentZoom > 1) {
+          lightboxStage.classList.add('zoomed');
+          lightboxHint.textContent = 'Drag to pan · Scroll to zoom · Double-click to reset · Esc to close';
+          lightboxHint.classList.add('pan-hint');
+        } else {
+          lightboxStage.classList.remove('zoomed');
+          lightboxStage.classList.remove('grabbing');
+          lightboxHint.textContent = 'Scroll or pinch to zoom · Double-click to zoom · Esc to close';
+          lightboxHint.classList.remove('pan-hint');
+        }
+
+        // Ensure the image transitions smoothly
+        lightboxImg.style.transition = 'transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)';
+      }
+
+      // ---- Zoom in / out / reset ----
+      function zoomIn() {
+        if (currentZoom < MAX_ZOOM) {
+          currentZoom = Math.min(MAX_ZOOM, currentZoom + ZOOM_STEP);
+          if (currentZoom === 1) { offsetX = 0; offsetY = 0; }
+          updateImage();
+        }
+      }
+      function zoomOut() {
+        if (currentZoom > MIN_ZOOM) {
+          currentZoom = Math.max(MIN_ZOOM, currentZoom - ZOOM_STEP);
+          if (currentZoom === 1) { offsetX = 0; offsetY = 0; }
+          updateImage();
+        }
+      }
+      function zoomReset() {
+        currentZoom = 1;
+        offsetX = 0;
+        offsetY = 0;
+        updateImage();
+      }
+
+      zoomInBtn.addEventListener('click', (e) => { e.stopPropagation(); zoomIn(); });
+      zoomOutBtn.addEventListener('click', (e) => { e.stopPropagation(); zoomOut(); });
+      zoomResetBtn.addEventListener('click', (e) => { e.stopPropagation(); zoomReset(); });
+
+      // ---- Wheel to zoom ----
+      lightboxStage.addEventListener('wheel', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        e.preventDefault();
+        if (e.deltaY < 0) zoomIn();
+        else zoomOut();
+      }, { passive: false });
+
+      // ---- Double-click to toggle zoom ----
+      lightboxImg.addEventListener('dblclick', (e) => {
+        e.stopPropagation();
+        if (currentZoom > 1) zoomReset();
+        else { currentZoom = 2; updateImage(); }
+      });
+
+      // ---- DRAG TO PAN ----
+      function getPoint(e) {
+        if (e.touches && e.touches.length) {
+          return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        }
+        return { x: e.clientX, y: e.clientY };
+      }
+
+      function startDrag(e) {
+        if (currentZoom <= 1) return; // No panning at 100%
+        const p = getPoint(e);
+        isDragging = true;
+        dragStartX = p.x;
+        dragStartY = p.y;
+        dragStartOffsetX = offsetX;
+        dragStartOffsetY = offsetY;
+        lightboxStage.classList.add('grabbing');
+        lightboxImg.style.transition = 'none'; // Instant response while dragging
+      }
+
+      function moveDrag(e) {
+        if (!isDragging) return;
+        const p = getPoint(e);
+        const dx = p.x - dragStartX;
+        const dy = p.y - dragStartY;
+        offsetX = dragStartOffsetX + dx;
+        offsetY = dragStartOffsetY + dy;
+        lightboxImg.style.transform =
+          `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px)) scale(${currentZoom})`;
+        e.preventDefault();
+      }
+
+      function endDrag() {
+        if (!isDragging) return;
+        isDragging = false;
+        lightboxStage.classList.remove('grabbing');
+        // Smooth transition back on release
+        lightboxImg.style.transition = 'transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)';
+      }
+
+      // Mouse events
+      lightboxStage.addEventListener('mousedown', (e) => {
+        if (e.button !== 0) return; // Left click only
+        startDrag(e);
+      });
+      window.addEventListener('mousemove', moveDrag);
+      window.addEventListener('mouseup', endDrag);
+
+      // Touch events (single finger = pan)
+      lightboxStage.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) {
+          startDrag(e);
+        }
+      }, { passive: true });
+
+      lightboxStage.addEventListener('touchmove', (e) => {
+        if (isDragging && e.touches.length === 1) {
+          moveDrag(e);
+        }
+      }, { passive: false });
+
+      lightboxStage.addEventListener('touchend', endDrag);
+      lightboxStage.addEventListener('touchcancel', endDrag);
+
+      // ---- Pinch to zoom (2 fingers) ----
+      let pinchStartDist = 0;
+      let pinchStartZoom = 1;
+
+      lightboxStage.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 2) {
+          // Cancel any drag
+          isDragging = false;
+          lightboxStage.classList.remove('grabbing');
+          pinchStartDist = Math.hypot(
+            e.touches[0].clientX - e.touches[1].clientX,
+            e.touches[0].clientY - e.touches[1].clientY
+          );
+          pinchStartZoom = currentZoom;
+        }
+      }, { passive: true });
+
+      lightboxStage.addEventListener('touchmove', (e) => {
+        if (e.touches.length === 2) {
+          e.preventDefault();
+          const dist = Math.hypot(
+            e.touches[0].clientX - e.touches[1].clientX,
+            e.touches[0].clientY - e.touches[1].clientY
+          );
+          if (pinchStartDist > 0) {
+            let newZoom = pinchStartZoom * (dist / pinchStartDist);
+            newZoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, newZoom));
+            currentZoom = newZoom;
+            if (currentZoom === 1) { offsetX = 0; offsetY = 0; }
+            updateImage();
+          }
+        }
+      }, { passive: false });
+
+      lightboxStage.addEventListener('touchend', (e) => {
+        if (e.touches.length < 2) pinchStartDist = 0;
+      });
+
+      // ---- Keyboard shortcuts ----
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        else if (e.key === '+' || e.key === '=') { e.preventDefault(); zoomIn(); }
+        else if (e.key === '-' || e.key === '_') { e.preventDefault(); zoomOut(); }
+        else if (e.key === '0') { e.preventDefault(); zoomReset(); }
+        else if (e.key === 'ArrowLeft')  { e.preventDefault(); offsetX += 40; updateImage(); }
+        else if (e.key === 'ArrowRight') { e.preventDefault(); offsetX -= 40; updateImage(); }
+        else if (e.key === 'ArrowUp')    { e.preventDefault(); offsetY += 40; updateImage(); }
+        else if (e.key === 'ArrowDown')  { e.preventDefault(); offsetY -= 40; updateImage(); }
+      });
+
+      // ---- Gallery click to open ----
+      document.querySelectorAll('[data-lightbox]').forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          const src = item.getAttribute('data-lightbox');
+          const caption = item.getAttribute('data-caption') || '';
+          openLightbox(src, caption);
+        });
+      });
+
+      // ---- Close interactions ----
+      lightboxClose.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
+
+      // Click on empty stage area (not on the image) to close
+      lightboxStage.addEventListener('click', (e) => {
+        if (e.target === lightboxStage) closeLightbox();
+      });
+
+      // ---- Fade-up observer ----
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.card:not(.fade-up), .gallery-item:not(.fade-up)').forEach(el => {
+        el.style.opacity = 0;
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+        observer.observe(el);
+      });
+    })();
+  </script>
+
+</body>
+</html>
