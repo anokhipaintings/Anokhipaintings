@@ -817,22 +817,17 @@
           <a href="https://wa.me/919769727517?text=Hi%20Anokhi%20Paintings,%20I%20am%20enquiring%20about%20classes%20in%20Sector%2010,%20Nerul!" target="_blank" class="btn btn-whatsapp">
             💬 WhatsApp Us
           </a>
-          <!-- EMAIL BUTTON (Shows anokhipaintings@gmail.com on click) -->
+          <!-- EMAIL BUTTON -->
           <a href="mailto:anokhipaintings@gmail.com?subject=Enquiry%20about%20Anokhi%20Paintings%20Classes" onclick="handleEmailClick(event)" class="btn btn-email">
             ✉️ Email Us
           </a>
         </div>
       </div>
 
-      <!-- MAIN HERO ARTWORK (Anokhi-1) -->
+      <!-- MAIN HERO ARTWORK (Anokhi-1.jpg directly) -->
       <div class="hero-image-wrap">
-        <img src="images/anokhi-1.jpg" alt="Lord Krishna Main Painting" 
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="gallery-fallback" style="display:none;">
-          🎨 Anokhi-1 (Main Photo)
-          <span style="font-size:0.75rem; font-weight:normal; margin-top:4px;">images/anokhi-1.jpg</span>
-        </div>
-        <div class="hero-caption">Featured Artwork: Lord Krishna Canvas Painting (Anokhi-1)</div>
+        <img src="Anokhi-1.jpg" alt="Featured Painting" onerror="tryNextFormat(this, 'Anokhi-1')">
+        <div class="hero-caption">Featured Artwork: Lord Krishna Canvas Painting</div>
       </div>
     </div>
   </header>
@@ -991,67 +986,73 @@
         <button class="filter-btn" onclick="filterGallery('sketches')">Pencil & Charcoal</button>
       </div>
 
-      <!-- Gallery Grid of all HD processed artworks -->
+      <!-- Gallery Grid: Pure direct .jpg files in repository root -->
       <div class="gallery-grid">
         <div class="gallery-card paintings" onclick="openLightbox(this)">
-          <img src="images/anokhi-2.jpg" alt="Lord Ganesha Painting" onerror="handleImgError(this, 'Ganesha Painting', 'anokhi-2.jpg')">
+          <img src="Anokhi-2.jpg" alt="Artwork 2" onerror="tryNextFormat(this, 'Anokhi-2')">
         </div>
         <div class="gallery-card paintings" onclick="openLightbox(this)">
-          <img src="images/anokhi-3.jpg" alt="Folk Portrait" onerror="handleImgError(this, 'Folk Portrait', 'anokhi-3.jpg')">
+          <img src="Anokhi-3.jpg" alt="Artwork 3" onerror="tryNextFormat(this, 'Anokhi-3')">
         </div>
         <div class="gallery-card paintings" onclick="openLightbox(this)">
-          <img src="images/anokhi-4.jpg" alt="Autumn Forest" onerror="handleImgError(this, 'Autumn Forest', 'anokhi-4.jpg')">
+          <img src="Anokhi-4.jpg" alt="Artwork 4" onerror="tryNextFormat(this, 'Anokhi-4')">
         </div>
         <div class="gallery-card paintings" onclick="openLightbox(this)">
-          <img src="images/anokhi-5.jpg" alt="White Daisies" onerror="handleImgError(this, 'Daisy Flowers', 'anokhi-5.jpg')">
+          <img src="Anokhi-5.jpg" alt="Artwork 5" onerror="tryNextFormat(this, 'Anokhi-5')">
         </div>
         <div class="gallery-card paintings" onclick="openLightbox(this)">
-          <img src="images/anokhi-6.jpg" alt="Turban Folk Art" onerror="handleImgError(this, 'Turban Folk Art', 'anokhi-6.jpg')">
+          <img src="Anokhi-6.jpg" alt="Artwork 6" onerror="tryNextFormat(this, 'Anokhi-6')">
         </div>
         <div class="gallery-card paintings" onclick="openLightbox(this)">
-          <img src="images/anokhi-7.jpg" alt="Moonlit Tree" onerror="handleImgError(this, 'Moonlit Cyan Tree', 'anokhi-7.jpg')">
+          <img src="Anokhi-7.jpg" alt="Artwork 7" onerror="tryNextFormat(this, 'Anokhi-7')">
         </div>
         <div class="gallery-card paintings" onclick="openLightbox(this)">
-          <img src="images/anokhi-8.jpg" alt="Floral Painting" onerror="handleImgError(this, 'Pink Floral Canvas', 'anokhi-8.jpg')">
+          <img src="Anokhi-8.jpg" alt="Artwork 8" onerror="tryNextFormat(this, 'Anokhi-8')">
         </div>
         <div class="gallery-card sketches" onclick="openLightbox(this)">
-          <img src="images/anokhi-9.jpg" alt="Deer Sketch" onerror="handleImgError(this, 'Majestic Deer Sketch', 'anokhi-9.jpg')">
+          <img src="Anokhi-9.jpg" alt="Artwork 9" onerror="tryNextFormat(this, 'Anokhi-9')">
         </div>
         <div class="gallery-card sketches" onclick="openLightbox(this)">
-          <img src="images/anokhi-10.jpg" alt="Pencil Portrait" onerror="handleImgError(this, 'Pencil Girl Portrait', 'anokhi-10.jpg')">
+          <img src="Anokhi-10.jpg" alt="Artwork 10" onerror="tryNextFormat(this, 'Anokhi-10')">
         </div>
         <div class="gallery-card paintings" onclick="openLightbox(this)">
-          <img src="images/anokhi-11.jpg" alt="Vithoba Artwork" onerror="handleImgError(this, 'Vithoba Painting', 'anokhi-11.jpg')">
+          <img src="Anokhi-11.jpg" alt="Artwork 11" onerror="tryNextFormat(this, 'Anokhi-11')">
         </div>
         <div class="gallery-card paintings" onclick="openLightbox(this)">
-          <img src="images/anokhi-12.jpg" alt="Abstract Ganesha" onerror="handleImgError(this, 'Abstract Ganesha', 'anokhi-12.jpg')">
+          <img src="Anokhi-12.jpg" alt="Artwork 12" onerror="tryNextFormat(this, 'Anokhi-12')">
         </div>
         <div class="gallery-card sketches" onclick="openLightbox(this)">
-          <img src="images/anokhi-13.jpg" alt="Folk Village Scene" onerror="handleImgError(this, 'Folk Market Sketch', 'anokhi-13.jpg')">
+          <img src="Anokhi-13.jpg" alt="Artwork 13" onerror="tryNextFormat(this, 'Anokhi-13')">
         </div>
         <div class="gallery-card sketches" onclick="openLightbox(this)">
-          <img src="images/anokhi-14.jpg" alt="Peeking Deer Sketch" onerror="handleImgError(this, 'Peeking Deer Sketch', 'anokhi-14.jpg')">
+          <img src="Anokhi-14.jpg" alt="Artwork 14" onerror="tryNextFormat(this, 'Anokhi-14')">
         </div>
         <div class="gallery-card sketches" onclick="openLightbox(this)">
-          <img src="images/anokhi-15.jpg" alt="Birds Sketch" onerror="handleImgError(this, 'Birds Reflection', 'anokhi-15.jpg')">
+          <img src="Anokhi-15.jpg" alt="Artwork 15" onerror="tryNextFormat(this, 'Anokhi-15')">
         </div>
         <div class="gallery-card sketches" onclick="openLightbox(this)">
-          <img src="images/anokhi-16.jpg" alt="Butterfly Sketch" onerror="handleImgError(this, 'Butterfly Sketch', 'anokhi-16.jpg')">
+          <img src="Anokhi-16.jpg" alt="Artwork 16" onerror="tryNextFormat(this, 'Anokhi-16')">
         </div>
         <div class="gallery-card sketches" onclick="openLightbox(this)">
-          <img src="images/anokhi-17.jpg" alt="Monkey Sketch" onerror="handleImgError(this, 'Baby Monkey Sketch', 'anokhi-17.jpg')">
+          <img src="Anokhi-17.jpg" alt="Artwork 17" onerror="tryNextFormat(this, 'Anokhi-17')">
         </div>
         <div class="gallery-card sketches" onclick="openLightbox(this)">
-          <img src="images/anokhi-18.jpg" alt="Ganesha Sketch" onerror="handleImgError(this, 'Ganesha Sketch', 'anokhi-18.jpg')">
+          <img src="Anokhi-18.jpg" alt="Artwork 18" onerror="tryNextFormat(this, 'Anokhi-18')">
         </div>
         <div class="gallery-card sketches" onclick="openLightbox(this)">
-          <img src="images/anokhi-19.jpg" alt="Boat Sketch" onerror="handleImgError(this, 'Misty Lake Boat', 'anokhi-19.jpg')">
+          <img src="Anokhi-19.jpg" alt="Artwork 19" onerror="tryNextFormat(this, 'Anokhi-19')">
         </div>
         <div class="gallery-card sketches" onclick="openLightbox(this)">
-          <img src="images/anokhi-20.jpg" alt="Staircase Sketch" onerror="handleImgError(this, 'Spiral Staircase', 'anokhi-20.jpg')">
+          <img src="Anokhi-20.jpg" alt="Artwork 20" onerror="tryNextFormat(this, 'Anokhi-20')">
         </div>
         <div class="gallery-card paintings" onclick="openLightbox(this)">
-          <img src="images/anokhi-21.jpg" alt="Moonlit Cat Painting" onerror="handleImgError(this, 'Moonlit Cat Painting', 'anokhi-21.jpg')">
+          <img src="Anokhi-21.jpg" alt="Artwork 21" onerror="tryNextFormat(this, 'Anokhi-21')">
+        </div>
+        <div class="gallery-card paintings" onclick="openLightbox(this)">
+          <img src="Anokhi-22.jpg" alt="Artwork 22" onerror="tryNextFormat(this, 'Anokhi-22')">
+        </div>
+        <div class="gallery-card paintings" onclick="openLightbox(this)">
+          <img src="Anokhi-23.jpg" alt="Artwork 23" onerror="tryNextFormat(this, 'Anokhi-23')">
         </div>
       </div>
     </div>
@@ -1219,7 +1220,7 @@
         <a href="https://wa.me/919769727517?text=Hello%20Anokhi%20Paintings,%20I%20am%20interested%20in%20classes%20in%20Sector%2010,%20Nerul!" target="_blank" class="btn btn-whatsapp">
           💬 WhatsApp: +91 97697 27517
         </a>
-        <!-- EMAIL BUTTON (Shows anokhipaintings@gmail.com on click) -->
+        <!-- EMAIL BUTTON -->
         <a href="mailto:anokhipaintings@gmail.com?subject=Enquiry%20about%20Anokhi%20Paintings%20Classes" onclick="handleEmailClick(event)" class="btn btn-email">
           ✉️ Email Us
         </a>
@@ -1248,9 +1249,33 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- SCRIPTS -->
   <script>
-    // Handle Email Click: Displays anokhipaintings@gmail.com on screen & copies to clipboard
+    // Robust Format Detection (tries .jpg, .jpeg, .png, lowercase, etc.)
+    function tryNextFormat(img, baseName) {
+      const candidates = [
+        `${baseName}.jpeg`,
+        `${baseName}.png`,
+        `${baseName}.jfif`,
+        `${baseName.toLowerCase()}.jpg`,
+        `${baseName.toLowerCase()}.png`,
+        `${baseName.toLowerCase()}.jpeg`
+      ];
+
+      let step = parseInt(img.dataset.step || '0');
+      if (step < candidates.length) {
+        img.dataset.step = step + 1;
+        img.src = candidates[step];
+      } else {
+        img.style.display = 'none';
+        const fallback = document.createElement('div');
+        fallback.className = 'gallery-fallback';
+        fallback.innerHTML = `🎨 ${baseName}<span style="font-size:0.75rem; font-weight:normal; margin-top:4px;">Image file</span>`;
+        img.parentElement.appendChild(fallback);
+      }
+    }
+
+    // Handle Email Click: Displays anokhipaintings@gmail.com & copies to clipboard
     function handleEmailClick(event) {
       const email = 'anokhipaintings@gmail.com';
       if (navigator.clipboard) {
@@ -1263,16 +1288,7 @@
       }, 5000);
     }
 
-    // Image Fallback Handling
-    function handleImgError(img, title, filename) {
-      img.style.display = 'none';
-      const fallback = document.createElement('div');
-      fallback.className = 'gallery-fallback';
-      fallback.innerHTML = `🎨 ${title}<span style="font-size:0.75rem; font-weight:normal; margin-top:4px;">images/${filename}</span>`;
-      img.parentElement.appendChild(fallback);
-    }
-
-    // Lightbox Logic
+    // Lightbox Modal
     function openLightbox(card) {
       const img = card.querySelector('img');
       if (img && img.style.display !== 'none' && img.src) {
@@ -1284,7 +1300,7 @@
       document.getElementById('lightboxModal').style.display = 'none';
     }
 
-    // Gallery Filter
+    // Gallery Category Filter
     function filterGallery(category) {
       const buttons = document.querySelectorAll('.filter-btn');
       buttons.forEach(btn => btn.classList.remove('active'));
@@ -1300,7 +1316,7 @@
       });
     }
 
-    // Syllabus Modal
+    // Syllabus Modal Logic
     function openSyllabusModal() {
       document.getElementById('syllabusModal').style.display = 'flex';
     }
@@ -1308,7 +1324,7 @@
       document.getElementById('syllabusModal').style.display = 'none';
     }
 
-    // Syllabus Tab Switching
+    // Syllabus Tab Switcher
     function switchSyllabusTab(tabId) {
       const tabButtons = document.querySelectorAll('.tab-btn');
       const tabContents = document.querySelectorAll('.syllabus-tab-content');
